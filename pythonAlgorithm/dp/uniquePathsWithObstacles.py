@@ -4,7 +4,7 @@ class Solution:
     @return: An integer
     """
     '''
-    如果是求max呢dvdfvbdf  
+    如果是求max呢
     '''
 
     def uniquePathsWithObstacles(self, obstacleGrid):
