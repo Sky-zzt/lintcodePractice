@@ -8,7 +8,7 @@ class LinkList:
     c = 10
 
     def __init__(self, *args):
-        self._value = (*args,)
+        self.val = (*args,)
         self.head = self.__constructLinklist()
         #self.printLinklist(self.head)
         # self.pre = self.revserlinklist()
@@ -16,15 +16,15 @@ class LinkList:
 
     def printLinklist(self, head):
         while head is not None:
-            print(head.value)
+            print(head.val)
             head = head.next
 
     def __constructLinklist(self):
         dummyNode = Node()
-        head = Node(self._value[0])
+        head = Node(self.val[0])
         dummyNode.next = head
-        for i in range(1, len(self._value)):
-            next = Node(self._value[i])
+        for i in range(1, len(self.val)):
+            next = Node(self.val[i])
             head.next = next
             head = next
         return dummyNode.next
