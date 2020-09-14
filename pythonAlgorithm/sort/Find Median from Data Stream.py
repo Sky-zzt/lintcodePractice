@@ -31,3 +31,11 @@ class Solution:
         if -self.maxheap[0] > self.minheap[0]:
             heapq.heappush(self.maxheap, -heapq.heappop(self.minheap))
             heapq.heappush(self.minheap, -heapq.heappop(self.maxheap))
+
+
+# todo push(e)改为push(-e)，pop(e)为-pop(e)，也就是说存入和取出的数都是相反数，其他逻辑和TopK相
+a = []
+for i in range(10):
+    # print(i)
+    heapq.heappush(a, -i)
+print(-heapq.heappop(a))
