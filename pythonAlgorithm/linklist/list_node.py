@@ -23,8 +23,8 @@ class ListNode(object):
 head_with_6ele_repeat4end = ListNode(1)
 n2 = ListNode(2)
 n3 = ListNode(3)
-n4 = ListNode(2)
-n5 = ListNode(1
+n4 = ListNode(0)
+n5 = ListNode(9
               )
 n6 = ListNode(3)
 n7 = ListNode(3)
