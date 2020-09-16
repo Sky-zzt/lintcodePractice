@@ -37,6 +37,6 @@ class Solution:
         head.next = pre
         return head
 
-
+#test merge
 s = Solution()
 s.rotateRight(head_with_6ele_repeat4end, 1)
