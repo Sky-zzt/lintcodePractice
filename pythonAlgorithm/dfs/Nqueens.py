@@ -40,3 +40,7 @@ class Solution:
             row = ['Q' if j == cols[i] else '.' for j in range(n)]
             board.append(''.join(row))
         return board
+
+
+s=Solution()
+print(s.solveNQueens(4))
