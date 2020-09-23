@@ -30,4 +30,8 @@ class Solution:
 
 
 s = Solution()
-print(s.combinationSum2([1, 1, 1], 2))  # todo how to understand
+print(s.combinationSum2([1, 1, 1], 2))  # [[1,1]]todo how to understand
+
+# todo 理解 深搜树递归图 有益身心
+#     关于这个0，1，2
+#   todo    1，1，1  ---- 1，2位置上的[1,1]为什么不算一组解，原因还是那个，你在把1 位置上的数0放进去的时候，0 位置上的没有放进去，所以，1，2，不会是解
