@@ -21,4 +21,4 @@ class Solution:
 
 s=Solution()
 
-print(s.subsets([]))
+print(s.subsets([1]))
