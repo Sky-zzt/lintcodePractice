@@ -7,6 +7,7 @@ class Solution:
     @param k: An integer
     @return: The maximum number inside the window at each moving.
     """
+
     def maxSlidingWindow(self, nums, k):
         # write your code here
         # write your code here
@@ -32,3 +33,12 @@ class Solution:
                 ans.append(nums[qmax[0]])
             # print(qmax)
         return ans
+
+    def maxSlideWin(self, nums, k):
+        ans = []
+        qmax = collections.deque()
+        cnt = 0
+        n = len(nums)
+        for i in range(n):
+            # if qmax.pop()
+            qmax.append(nums[i])

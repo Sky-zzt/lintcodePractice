@@ -19,8 +19,9 @@ class Solution:
             res.append(list(part))
             return
         for i in range(len(nums)):
-            if  nums[i] in s:continue
-            if i>0 and visited[i-1]==0 and nums[i-1]==nums[i]: continue # todo   nums[i] in s 不应该以and的形式放在这里，因为前后不似乎同一个逻辑
+            if nums[i] in s: continue  # TODO 这个去重 不能这么做，怒不然【1,1】，这种情况就有问题  参考下面那个写法
+            if i > 0 and visited[i - 1] == 0 and nums[i - 1] == nums[
+                i]: continue  # todo   nums[i] in s 不应该以and的形式放在这里，因为前后不似乎同一个逻辑
             visited[i]=1
             s.add(nums[i])
             part.append(nums[i])
