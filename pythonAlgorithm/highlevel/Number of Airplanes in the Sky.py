@@ -45,7 +45,7 @@ class Solution:
     # a=sorted(res,key=lambda t:(t.x,t.y))
     #
     # print(a[0].y)
-
+    # todo  Very simple ,think in  a  real situation in life that the airplane fall and up as the tome goes by (sorted time )
     def maxAirPlane(self, airplanes):
         container = []
         for i in airplanes:
