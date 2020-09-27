@@ -29,20 +29,24 @@ class Solution:
         q = Queue()
         q.put(Coordinate(x, y))
         grid[x][y] = 0
-        while q:
-            ele = q.get()
+        while q.qsize()!=0:
+            coor = q.get()
             for i in range(4):
-                coor = Coordinate(ele.x + directionX[i], ele.y + directionY[i])
-                if not self.isBound(grid, coor):  continue
-                if grid[coor.x][coor.y] == 1:
-                    grid[coor.x][coor.y] = 0
-                    q.put(coor)
+                adj = Coordinate(coor.x + directionX[i],
+                                 coor.y + directionY[i])
+                if self.isBound(grid, adj):  continue
+                if grid[adj.x][adj.y] == 1:
+                    grid[adj.x][adj.y] = 0
+                    q.put(adj)
 
     def isBound(self, grid, coor):
-        if coor.x < 0 or coor.x >= len(grid): return False
-        if coor.y < 0 or coor.y >= len(grid[0]): return False
-        return True
+        if coor.x < 0 or coor.x >= len(grid): return True
+        if coor.y < 0 or coor.y >= len(grid[0]): return True
+        return False
 
 
 s = Solution()
 print(s.numIslands([[1, 1, 0, 0, 0]]))
+
+
+

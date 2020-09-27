@@ -6,6 +6,13 @@ class Solution:
     @param nums: A list of integers.
     @param k: An integer
     @return: The maximum number inside the window at each moving.
+
+    双端队列  deque
+    【                   】
+    头  大--> 小不能相等   尾
+   加数 如果尾部比新来的小弹出，保持从大到小的结构
+    减数  就是L 右边移动，deque的 头部弹出扔掉
+    头部的第一个位置就是当前窗口的最大值
     """
 
     def maxSlidingWindow(self, nums, k):
