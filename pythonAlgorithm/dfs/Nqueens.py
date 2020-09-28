@@ -3,6 +3,7 @@ class Solution:
     @param: n: The number of queens
     @return: All distinct solutions
     """
+
     # todo 把他当成排列 做就行
     def solveNQueens(self, n):
         # result用于存储答案
@@ -12,13 +13,7 @@ class Solution:
 
     # search函数为搜索函数，n表示已经放置了n个皇后，col表示每个皇后所在的列
     def search(self, n, col, results):
-        if len(col)==n:results.append(self.Draw(col))
-        for colIndex in range(n):
-            if not self.isValid(col,colIndex):continue
-            col.append(colIndex)
-            self.search(n,col,results)
-            col.pop()
-
+        pass
 
     def isValid(self, cols, colIndex):
         def isValid(self, cols, row, now_col):
