@@ -8,12 +8,14 @@ class Solution:
     def solveNQueens(self, n):
         # result用于存储答案
         results = []
-        self.search(n, [], results)
+        self.search(0, [], results)
         return results
 
-    # search函数为搜索函数，n表示已经放置了n个皇后，col表示每个皇后所在的列
+    # search函数为搜索函数，n表示已经z放置了n个皇后，col表示每个皇后所在的列
     def search(self, n, col, results):
-        pass
+        mark = [[0] * n for _ in range(n)]
+        for i in range(n):
+            self.search(n + 1, col, results)
 
     def isValid(self, cols, colIndex):
         def isValid(self, cols, row, now_col):
