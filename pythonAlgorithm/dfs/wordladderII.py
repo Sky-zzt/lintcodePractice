@@ -33,6 +33,9 @@ class Solution:
     }
     
     对比看 dfs的写法，结束条件等，树也是dfs遍历的，树也可以 for (Node next : node.nexts):只不过树只有 left和right，所以不用for 直接写 而图不确定有几个next
+
+    一般求具体方案的，因为你已经把这个方案放进去了，所以，递归的时候需要回溯，就是把这个方案再拿出来呗
+   
     '''
 
     def findLadders(self, start, end, dict):
