@@ -29,6 +29,6 @@ class Solution:
                 if board[x][y] == 'O': mark[x][y] = False
                 isOk = self.dfs(board, directionX[i] + x, directionY[i] + y, res, mark, hash)
                 if board[x][y] == 'O': mark[x][y] = True  # 回溯
-                res.add(isOk)  # TODO  res 存的是四个方向 的结果，都为true 说明都被 O 'X'围绕，可以替换为 X
-        hash[x][y] = False not in res
+                res.add(isOk)  # TODO  res 存的是四个方向 的结果，都为true 说明O都被  'X'围绕，可以替换为 X
+        hash[x][y] = False not in res  #
         return hash[x][y]
