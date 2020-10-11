@@ -1,7 +1,5 @@
 import heapq
 
-from heapq import heappush, heappop
-from collections import defaultdict
 import collections
 
 
@@ -20,6 +18,17 @@ class Node(object):
         return self.word > other.word
 
 
+class test(object):
+    def __init__(self, int, str):
+        self.freq = int
+        self.word = str
+
+    def __lt__(self, other):
+        if self.freq != other.freq:
+            return self.freq < other.freq
+        return self.word > other.word
+
+
 class Solution:
     """
     @param words: an array of string
@@ -32,13 +41,13 @@ class Solution:
         if not words or k <= 0:
             return []
 
-        map = collections.defaultdict(int)
+        map = collections.defaultdict(int)# https://www.jianshu.com/p/bbd258f99fd3
         ans = []
 
         for word in words:
             map[word] += 1
 
-            heap = []
+        heap = []
 
         for word, freq in map.items():
             heapq.heappush(heap, Node(freq, word))
@@ -53,7 +62,15 @@ class Solution:
         return ans
 
 
-map = {4: 2, 2: 3}
+map = {}
+map['1'] = 2
+map['1'] += 1
+print(map.get("1"))
 
-map = sorted(map.items(), key=lambda kv: (kv[0], kv[1]))
-print()
+print(map)
+
+#
+# map = {4: 2, 2: 3}
+#
+# map = sorted(map.items(), key=lambda kv: (kv[0], kv[1]))
+# print()

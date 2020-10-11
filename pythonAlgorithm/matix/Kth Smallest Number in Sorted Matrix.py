@@ -27,7 +27,16 @@ class Solution:
     输出: 3
     Challenge
     时间复杂度 O(klogn), n 是矩阵的宽度和高度的最大值
+
+    用堆解决:
+
+定义一个小根堆, 起始仅仅放入第一行第一列的元素.
+
+循环 k次, 每一次取出一个元素, 然后把该元素右方以及下方的元素放入堆中, 第 k次取出的元素即为答案.
+
+其中, 要注意一个元素不能重复入堆, 需要记录.hashset
     """
+
     def kthSmallest(self, matrix, k):
         # write your code here
         pass
