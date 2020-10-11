@@ -3,6 +3,22 @@ class Solution:
     @param nums: an integer array and all positive numbers, no duplicates
     @param target: An integer
     @return: An integer
+
+    给出一个都是正整数的数组 nums，其中没有重复的数。从中找出所有的和为 target 的组合个数。
+
+        Example
+        样例1
+
+        输入: nums = [1, 2, 4] 和 target = 4
+        输出: 6
+        解释:
+        可能的所有组合有：
+        [1, 1, 1, 1]
+        [1, 1, 2]
+        [1, 2, 1]
+        [2, 1, 1]
+        [2, 2]
+        [4]
     """
 
     # 如何求出一种具体方案呢

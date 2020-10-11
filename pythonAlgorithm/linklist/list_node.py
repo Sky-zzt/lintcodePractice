@@ -3,6 +3,7 @@ class ListNode(object):
         self.val = val
         self.next = next
         # self.head = self.constructLinklist()
+
     @classmethod
     def printLinklist(self, head):
         while head is not None:
@@ -23,9 +24,9 @@ class ListNode(object):
 head_with_6ele_repeat4end = ListNode(1)
 n2 = ListNode(2)
 n3 = ListNode(3)
-n4 = ListNode(0)
-n5 = ListNode(9
-              )
+n4 = ListNode(4)
+
+n5 = ListNode(9)
 n6 = ListNode(3)
 n7 = ListNode(3)
 n8 = ListNode(3)
@@ -35,7 +36,7 @@ n10 = ListNode(6)
 head_with_6ele_repeat4end.next = n2
 n2.next = n3
 n3.next = n4
-n4.next = n5
+# n4.next = n5
 # n5.next=n6
 # n2.next=n7
 # n7.next=n8

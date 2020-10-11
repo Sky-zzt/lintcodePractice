@@ -5,7 +5,7 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
-
+from tree.defTree import tree
 
 class Solution:
     """
@@ -24,10 +24,13 @@ class Solution:
         if leftlast is not  None:
             leftlast.right = root.right
             root.right = root.left
-            root.left=None
-        if leftlast is not None:    # todo  顺序反了  28 30 换一下
+            root.left = None
+        if leftlast is not None:  # todo  顺序反了  28 30 换一下
             return leftlast
         if rightlast is not None:
             return rightlast
         return root
 
+
+s = Solution()
+s.flatten(tree)

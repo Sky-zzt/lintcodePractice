@@ -45,7 +45,30 @@ class Solution:
             head = head.next
         return dummyNode.next
 
+    def swap(self, head, pre):
+        if head.next.next is not None:
+            head.next = head.next.next
+            head.next.next = pre
+            pre = head
+            self.swap(head.next.next, pre)
+
+    # https://mp.weixin.qq.com/s?__biz=MzU0OTU5OTI4MA==&idx=2&mid=2247485084&sn=78dfedad9f8e6840378a60b6c1f0ae4f
+    # https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/hua-jie-suan-fa-24-liang-liang-jiao-huan-lian-biao/
+    def swapPairs2(self, head):
+        dummy = ListNode(0)
+        left = dummy
+        dummy.next = head
+        mid = head
+        right = head.next
+        while right.next is not None:
+            mid.next = right.next
+            right.next = mid
+            left.next = right
+            left = left.next.next
+            mid = mid.next
+            right = mid.next
+        return dummy.next
 
 s = Solution()
-s.swapPairs(head_with_6ele_repeat4end)
+s.swapPairs2(head_with_6ele_repeat4end)
 ListNode.printLinklist(head_with_6ele_repeat4end)
