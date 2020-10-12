@@ -51,54 +51,89 @@ class Solution:
     @return: all valid paths
     """
 
+
+
+
+
+
     def binaryTreePathSum(self, root, target):
         # write your code here
-        res = []
-        self.helper(root, target, res, [], 0)
-        return res
+        result = []
+        if not root:return result
+        path=[root.val]
+        self.helper(root, path, root.val, target, result)
+        return result
 
     # dfs 加回溯
-    def helper(self, root, target, res, path, ans):
-        if ans == target and root is None and root is None:  # 到达叶节点 已经和等于target时  将path 加入res
-            if path not in res:
-                res.append(list(path))
-            return
-        if root is not None:
-            path.append(root.val)
-            ans += root.val
-            self.helper(root.left, target, res, path, ans)  # 左子树dfs
-            ans -= root.val
-            path.remove(path[-1])
+    def helper(self, root, path, sum, target, res):
 
-        if root is not None:
-            path.append(root.val)
-            ans += root.val
-            self.helper(root.right, target, res, path, ans)  # # 右子树dfs
-            ans -= root.val
-            path.remove(path[-1])
 
-    def helper2(self, root, target, res, path, ans):
-        if ans == target and root.left is None and root.right is None:
-            if path not in res:
-                res.append(list(path))
+        if sum == target and root.left is None and root.right is None:  # 到达叶节点 已经和等于target时  将path 加入res
+            #if path not in res:
+            res.append(list(path))
             return
 
         if root.left is not None:
             path.append(root.left.val)
-            ans += root.left.val
-            self.helper(root.left, target, res, path, ans)
-            ans -= root.left.val
+            sum += root.left.val
+            self.helper(root.left,  path, sum, target, res)
+            sum -= root.left.val
             path.remove(path[-1])
 
         if root.right is not None:
             path.append(root.right.val)
-            ans += root.right.val
-            self.helper(root.right, target, res, path, ans)
-            ans -= root.right.val
+            sum += root.right.val
+            self.helper(root.right,  path, sum, target, res)
+            sum -= root.right.val
             path.remove(path[-1])
 
 
-from tree.defTree import tree
 
-s = Solution()
-print(s.binaryTreePathSum(tree, 6))
+        '''
+        
+       fllowing works!
+       
+ public List<List<Integer>> binaryTreePathSum(TreeNode root, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        
+        ArrayList<Integer> path = new ArrayList<Integer>();
+        path.add(root.val);
+        helper(root, path, root.val, target, result);
+        return result;
+    }
+    
+    private void helper(TreeNode root,
+                        ArrayList<Integer> path,
+                        int sum,
+                        int target,
+                        List<List<Integer>> result) {
+                            
+        // meet leaf
+        if (root.left == null && root.right == null&&sum == target) {
+                result.add(new ArrayList<Integer>(path));
+            return;
+        }
+        
+        // go left
+        if (root.left != null) {
+            path.add(root.left.val);
+            sum=sum + root.left.val;
+            helper(root.left, path, sum, target, result);
+            path.remove(path.size() - 1);
+            sum=sum - root.left.val;
+        }
+        
+        // go right
+        if (root.right != null) {
+            path.add(root.right.val);
+            sum=sum + root.right.val;
+            helper(root.right, path, sum, target, result);
+            path.remove(path.size() - 1);
+            sum=sum - root.right.val;
+        }
+    }
+        '''
+
