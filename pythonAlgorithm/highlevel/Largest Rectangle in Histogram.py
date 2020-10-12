@@ -14,16 +14,20 @@ class Solution:
     # todo 下次想不起来就重写一遍吧  呵呵
     def largestRectangleArea(self, heights):
         # todo 左边和右边的离他最近的最大最小值  Monotonous stack
+        heights.insert(0, 0)
         leftmin, rightmin = self.MonotonousStack(heights + [0])  # todo 右边加个 0 好处理
         maxArea = 0
-        ans = 0
         for i in range(len(heights)):
             ans = 0
             # if rightmin[i]==-1:
             #     ans+=heights[i]*(len(heights)-i)
             # if leftmin[i]==-1:
             #     ans+=heights[i]*(i+1)
-            ans = heights[i] * ((i - leftmin[i]) + (rightmin[i] - i))  ## todo 这不就是 rightmin[i]-leftmin[i] 呵呵
+            if i == len(heights) - 1:
+                ans = heights[i] * (rightmin[i] - leftmin[i])
+            else:
+                ans = heights[i] * (rightmin[i] - leftmin[i] + 1)
+            # ans = heights[i] * ((i - leftmin[i]) + (rightmin[i] - i))  ## todo 这不就是 rightmin[i]-leftmin[i] 呵呵
             maxArea = max(maxArea, ans)
 
     # 不能处理相等的情况，想等的话，stack.append([3,3]) 这样做
@@ -63,3 +67,7 @@ class Solution:
 s = Solution()
 
 s.MonotonousStack1([1, 2, 4])
+
+a = [1, 2]
+a.insert(1, 0)
+print(a)

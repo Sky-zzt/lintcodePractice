@@ -22,14 +22,16 @@ class Solution:
         # if board[x][y] == "O":
         #     mark[x][y]=False
         else:
-         #   mark[x][y] = True
-            if  mark[x][y]:
+
+            if mark[x][y]:
+                mark[x][y] = True  # todo 这种 不好回溯啊
                 up = self.dfs(board, x - 1, y, mark)
                 down = self.dfs(board, x + 1, y, mark)
                 left = self.dfs(board, x, y - 1, mark)
                 mark[x][y] = False
                 right = self.dfs(board, x, y + 1, mark)
-            else:return True
+            else:
+                return True
 
             return up and down and left and right
 
@@ -37,5 +39,5 @@ class Solution:
 s = Solution()
 print(s.surroundedRegions([['X', 'X', 'X', 'X'],
                            ['X', 'O', 'O', 'X'],
-                           ['X', 'X', 'X', 'X'],
-                           ['X', 'O', 'X', 'X']]))
+                           ['X', 'O', 'O', 'X'],
+                           ['X', 'X', 'X', 'X']]))

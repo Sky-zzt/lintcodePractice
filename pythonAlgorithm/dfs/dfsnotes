@@ -1,0 +1,22 @@
+treeAndgraph dfs.jpg的补充
+
+但是对于 路径求和之类的呢 图和 树都一样的， 每一个方向都要加 然后在回溯
+        if root.left is not None:
+            path.append(root.val)
+            ans += root.val
+            self.helper(root.left, target, res, path, ans)
+            ans -= root.val
+            path.remove(path[-1])
+
+        if root.right is not None:
+            path.append(root.val)
+            ans += root.val
+            self.helper(root.right, target, res, path, ans)
+            ans -= root.val
+            path.remove(path[-1])
+
+突然就觉得那个jpg总结的有问题，树mark的时候也需要每一个方向回溯 呵呵
+
+那就以后 树 统一 用如上的方式dfs
+
+图 用jpg的for 循环走方向数组dfs
