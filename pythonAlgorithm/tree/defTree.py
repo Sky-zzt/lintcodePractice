@@ -12,11 +12,11 @@ tree4 = TreeNode(4)
 tree5 = TreeNode(6)
 # tree6=TreeNode(7)
 
-tree.right = tree1
-tree.left = tree2
-tree1.right = tree4
-tree1.left = tree3
+tree.right = tree3
+tree.left = tree1
+# tree1.right = tree4
+tree1.left = tree4
 
-tree2.right = tree5
+# tree2.right = tree5
 # tree2.left=tree3
 # tree2.right=tree4
