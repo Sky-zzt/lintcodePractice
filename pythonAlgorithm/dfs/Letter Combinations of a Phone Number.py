@@ -24,9 +24,10 @@ class Solution:
             return
         for i in range(len(digits)):
             if digits[i] in self.PHONE:
-                ans=ans+digits
-                self.dfs(digits,count,res,ans)
-                ans.pop()
+                for j in self.PHONE.get(digits[i]):
+                    ans=ans+j
+                    self.dfs(digits,count,res,ans)
+                    ans.pop()
 
 
 
