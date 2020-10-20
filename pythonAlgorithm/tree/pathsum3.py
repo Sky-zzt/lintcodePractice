@@ -1,3 +1,8 @@
+import sys
+
+print(sys.version)
+
+
 class Solution:
     """
     @param: root: the root of binary tree
