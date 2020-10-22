@@ -49,7 +49,7 @@ class Solution:
 只有数组L
     """
 
-    # todo 九章算法强化班中讲过的基于值的二分法。 ：   类似的还有robot jumping
+    # todo 九章算法强化班中讲过的基于值的二分法。 ：   类似的还有robot jumping,copybooks
     def woodCut(self, L, k):
         # write your code here
         len_L = len(L)
