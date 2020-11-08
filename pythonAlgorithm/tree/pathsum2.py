@@ -49,3 +49,8 @@ from tree.defTree import tree
 
 s = Solution()
 print(s.pathSum(tree, 6))
+
+a=(12,2,)
+b=(2,3)
+a=a+b
+print(a)
