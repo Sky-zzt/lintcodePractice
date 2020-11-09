@@ -51,7 +51,7 @@ PrefixSpan算法
 
 14.什么是average pooling
 
-15
+15.精准率、召回率
 
 
 
