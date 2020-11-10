@@ -34,5 +34,8 @@ class Solution:
         return less + 1, more - 1
 
 
+print('1' == '1')
+
+
 def swap(arr, start, end):
     arr[start], arr[end] = arr[end], arr[start]
